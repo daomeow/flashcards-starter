@@ -42,11 +42,24 @@ describe('Round', function() {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it.skip('should calculate the percentage of correct guesses', function() {
+  it('should calculate the percentage of correct guesses', function() {
     const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
     const deck = new Deck(card);
     const round = new Round(deck);
 
-    expect(round.calculatePercentCorrect).to.deep.equal(100);
+    round.takeTurn(3);
+
+    expect(round.calculatePercentCorrect()).to.deep.equal(100);
+  });
+
+  it('should print a message at the end of the round', function() {
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
+    const round = new Round(deck);
+
+    round.takeTurn(3);
+    round.calculatePercentCorrect();
+
+    expect(round.endRound()).to.deep.equal('** Round over!** You answered 100% of the questions correctly!');
   });
 });

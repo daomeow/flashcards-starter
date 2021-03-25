@@ -16,34 +16,34 @@ describe('Turn', function() {
     const turn = new Turn('pug', card);
     
     expect(turn.guess).to.equal('pug');
-    expect(turn.card).to.equal(card);
+    expect(turn.card).to.deep.equal(card);
   });
 
   it('should return the guess', function() {
     const card = new Card();
     const turn = new Turn('pug', card);
 
-    expect(turn.returnGuess()).to.equal('pug');
+    expect(turn.returnGuess()).to.deep.equal('pug');
   });
 
   it('should return the card', function() {
     const card = new Card();
     const turn = new Turn('pug', card);
 
-    expect(turn.returnCard()).to.equal(card);
+    expect(turn.returnCard()).to.deep.equal(card);
   });
 
   it('should indicate if the guess matches the correct answer on the card', function() {
     const card = new Card();
     const turn = new Turn('pug', card);
 
-    expect(turn.evaluateGuess()).to.equal(false);
+    expect(turn.evaluateGuess()).to.deep.equal(false);
   });
 
   it('should give feedback whether the guess is correct or not', function() {
     const card = new Card();
     const turn = new Turn('pug', card);
 
-    expect(turn.giveFeedback()).to.equal('incorrect!');
+    expect(turn.giveFeedback()).to.deep.equal('incorrect!');
   });
 });

@@ -5,17 +5,17 @@ const Deck = require('../src/Deck');
 
 describe('Deck', function() {
 
-  it.skip('should initialize an array of card objects', function() {
+  it('should initialize an array of card objects', function() {
     const card = new Card();
     const deck = new Deck(card);
 
-    expect(deck.cards).to.equal([card]);
+    expect(deck.cards).to.deep.equal([card]);
   });
 
   it('should know how many cards are in the deck', function() {
     const card = new Card();
     const deck = new Deck(card);
 
-    expect(deck.countCards()).to.equal(1);
+    expect(deck.countCards()).to.deep.equal(1);
   });
 });

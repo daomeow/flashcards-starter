@@ -1,44 +1,50 @@
 const chai = require('chai');
+const Card = require('../src/Card');
 const Deck = require('../src/Deck');
 const expect = chai.expect;
 const Round = require('../src/Round');
 
 describe('Round', function() {
 
-  it.skip('should take in responses', function() {
-    const deck = new Deck();
+  it('should take in responses', function() {
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
     const round = new Round(deck);
 
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip('should return the current card being played', function() {
-    const deck = new Deck();
+  it('should return the current card being played', function() {
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
     const round = new Round(deck);
-
-    expect(round.returnCurrentCard()).to.deep.equal(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    
+    expect(round.returnCurrentCard()).to.deep.equal({id: 2, question: 'How many hearts do octopuses have?', answers: [1, 2, 3], correctAnswer: 3});
   });
 
-  it.skip('should count each guess as a turn', function() {
-    const deck = new Deck();
+  it('should count each guess as a turn', function() {
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
     const round = new Round(deck);
 
     expect(round.turns).to.deep.equal(0);
 
-    round.takeTurn();
+    round.takeTurn(1);
 
     expect(round.turns).to.deep.equal(1);
   }); 
 
-  it.skip('should record incorrect guesses', function() {
-    const deck = new Deck();
+  it('should record incorrect guesses', function() {
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
     const round = new Round(deck);
 
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
   it.skip('should calculate the percentage of correct guesses', function() {
-    const deck = new Deck();
+    const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
+    const deck = new Deck(card);
     const round = new Round(deck);
 
     expect(round.calculatePercentCorrect).to.deep.equal(100);

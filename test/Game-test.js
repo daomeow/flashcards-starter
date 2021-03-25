@@ -13,8 +13,6 @@ describe('Game', function() {
 
   it('should keep track of the current round', function() {
     const game = new Game();
-    // game.start();
-    // expect(game.currentRound).to.be.an.instanceOf(Round);
-    expect(game.currentRound).to.equal();
+    expect(game.currentRound).to.deep.equal();
   });
 });

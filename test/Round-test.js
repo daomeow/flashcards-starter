@@ -5,14 +5,14 @@ const Round = require('../src/Round');
 
 describe('Round', function() {
 
-  it('should take in responses', function() {
+  it.skip('should take in responses', function() {
     const deck = new Deck();
     const round = new Round(deck);
 
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it('should return the current card being played', function() {
+  it.skip('should return the current card being played', function() {
     const deck = new Deck();
     const round = new Round(deck);
 

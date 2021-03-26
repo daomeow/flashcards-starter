@@ -9,8 +9,6 @@ class Round {
     this.incorrectGuesses = [];
   }
   returnCurrentCard() {
-    // let currentCard = this.deck.cards.shift();
-    // return currentCard;
     return this.deck.cards[0];
   }
   takeTurn(guess) {

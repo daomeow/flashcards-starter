@@ -12,4 +12,3 @@ This program will help users review Javascript concepts right in their terminal.
 
 ## Authors
 Melanie Daoheuang [@daomeow](https://github.com/daomeow) (edited) 
----

@@ -5,7 +5,6 @@ const Round = require('./Round');
 const prototypeQuestions = data.prototypeData;
 const util = require('./util');
 
-
 class Game {
   constructor() {
     this.currentRound;

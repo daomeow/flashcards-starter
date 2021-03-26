@@ -1,4 +1,4 @@
-// const Card = require("./card");
+const { createPromptModule } = require("inquirer");
 
 class Turn {
   constructor(guess, card) {
@@ -12,6 +12,9 @@ class Turn {
     return this.card;
   }
   evaluateGuess() {
+    console.log('guess: ' + this.guess)
+
+    console.log('answer: ' + this.card.correctAnswer)
     if (this.guess === this.card.correctAnswer) {
       return true;
     } else {

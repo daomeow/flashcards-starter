@@ -14,7 +14,7 @@ describe('Round', function() {
     expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip('should return the current card being played', function() {
+  it('should return the current card being played', function() {
     const card = new Card(2, 'How many hearts do octopuses have?', [1, 2, 3], 3);
     const deck = new Deck(card);
     const round = new Round(deck);
